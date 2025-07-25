@@ -1,0 +1,55 @@
+{
+  "title": "file-sample_1",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "Lorem ipsum",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "elit. Nunc ac faucibus odio.",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "Cras fringilla ipsum magna, in fringilla dui commodo",
+      "page": 2
+    },
+    {
+      "level": "H2",
+      "text": "a.",
+      "page": 2
+    },
+    {
+      "level": "H2",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      "page": 3
+    },
+    {
+      "level": "H2",
+      "text": "elit.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "Maecenas mauris lectus, lobortis et purus mattis, blandit",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "dictum tellus.",
+      "page": 3
+    },
+    {
+      "level": "H3",
+      "text": "In eleifend velit vitae libero sollicitudin euismod.",
+      "page": 3
+    }
+  ]
+}
