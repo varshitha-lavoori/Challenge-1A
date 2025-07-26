@@ -1,69 +1,42 @@
-📄 Connecting the Dots — Challenge 1A Solution
-👋 Overview
-This repository contains my submission for Round 1A of the Adobe India Hackathon 2025.
-It extracts a structured outline from each PDF — automatically detecting headings (H1, H2, H3) using relative font sizes — and generates a valid JSON file for each PDF.
+# 📄 Connecting the Dots — Challenge 1A Solution
 
-✅ Approach
-📚 Library Used: PyMuPDF (fitz in Python)
+## 👋 Overview
 
-🗂️ The script automatically loops through all PDFs in /app/input.
+This project is my submission for **Round 1A** of the **Adobe India Hackathon 2025**.  
+It extracts a **structured outline** from each PDF — detecting headings (`H1`, `H2`, `H3`) using text font sizes — and saves the result as a valid JSON file for each PDF.
 
-🔍 It extracts all text spans and gathers unique font sizes.
+---
 
-🔢 The largest font size is treated as H1, the next as H2, and the next as H3.
+## ✅ **Approach**
 
-🏷️ Each heading is saved with its level, text, and page number.
+- 📚 **Library Used:** [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/) (`fitz` in Python)
+- 🗂️ The script loops through all PDFs in `/app/input` automatically.
+- 🧩 It extracts all text spans and collects **font sizes**.
+- 🔢 The largest font size is treated as `H1`, next as `H2`, next as `H3`.
+- 🗂️ Each heading is saved with `level`, `text`, and `page` number.
+- 📂 The output JSON file is named `<filename>.json` and stored in `/app/output`.
 
-📄 The output JSON is named <filename>.json and saved to /app/output.
+---
 
-✅ Requirements Satisfied
-✔️ Runs fully offline — no internet needed
-✔️ Uses CPU only — no large models (PyMuPDF only, ~20 MB)
-✔️ Processes multiple PDFs automatically
-✔️ Output format matches the required schema (title + outline[])
-✔️ Compatible with AMD64 (x86_64) architecture
-✔️ Executes in under 10 seconds for typical 50-page PDFs
-✔️ No file-specific hardcoding or external API calls
+## ✅ **Requirements Satisfied**
 
-✅ Project Structure
-graphql
-Copy
-Edit
+✔️ Runs **fully offline** — no internet needed  
+✔️ Uses **CPU only** — no large models, only PyMuPDF (~20 MB)  
+✔️ Automatic — processes **multiple PDFs** in a loop  
+✔️ Output format matches **the required schema** (`title` + `outline[]`)  
+✔️ Compatible with **AMD64 (x86_64)** architecture  
+✔️ Runs under **10 seconds** for typical 50-page PDFs (PyMuPDF is very fast)  
+✔️ No file-specific hardcoding or web calls
+
+---
+
+## ✅ **Folder Structure**
+
+```plaintext
 connecting-the-dots/
-├── extractor.py # Main Python script
-├── Dockerfile # Docker container configuration
-├── README.md # This file
-├── input/ # Place input PDFs here
-├── output/ # Output JSON files will be generated here
-✅ Build Instructions
-1️⃣ Build the Docker image:
-
-bash
-Copy
-Edit
-docker build --platform linux/amd64 -t connecting-the-dots-solution .
-2️⃣ Run the container:
-
-bash
-Copy
-Edit
-docker run --rm \
- -v "${PWD}/input:/app/input" \
-  -v "${PWD}/output:/app/output" \
- --network none connecting-the-dots-solution
-On Windows PowerShell, use \ for line breaks or run it as a single line.
-
-⚡ How It Works
-The container reads all .pdf files in /app/input (read-only).
-
-Generates a matching .json in /app/output for each input PDF.
-
-Fully offline — requires no internet access at runtime.
-
-📌 Notes
-✅ Please test with simple and complex PDFs.
-✅ Tune your heading detection logic further for maximum accuracy.
-✅ Keep this repository private until the competition deadline.
-✅ No output JSON files are stored in the repo — they are generated at runtime.
-
-Good luck connecting the dots! 🚀
+ ├── extractor.py      # Main script
+ ├── Dockerfile        # Container config
+ ├── README.md         # This file
+ ├── input/            # Place input PDFs here
+ ├── output/           # Output JSONs will be written here
+```
